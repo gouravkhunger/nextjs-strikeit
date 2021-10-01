@@ -19,18 +19,23 @@ export default function Home() {
       descRef.current.innerText =
         "Striked text will automatically be copied to clipboard.";
     } else {
-      descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+      //descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
     }
     previewRef.current.innerText = strike(value);
   };
 
-  const copy = () => {
-    let timeout = null;
+  let timeout = null;
+  let cotime = null;
+  function copyText() {
     clearTimeout(timeout);
     timeout = setTimeout(function () {
       navigator.clipboard.writeText(previewRef.current.innerHTML);
     }, 1000);
-  };
+    clearTimeout(cotime);
+    cotime = setTimeout(function () {
+      descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+    }, 1000);
+  }
 
   return (
     <div className={styles.container}>
@@ -62,7 +67,7 @@ export default function Home() {
             placeholder="Enter text here"
             type="text"
             onChange={input}
-            onKeyUp={copy}
+            onKeyUp={copyText}
           />
           <p className={styles.preview} ref={previewRef}></p>
           <p className={styles.desc}>
