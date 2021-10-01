@@ -22,7 +22,7 @@ export default function Home() {
       descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`
     }
     previewRef.current.innerText = strike(value)
-    async sleep(1000);
+    sleep(1000);
     setTimeout(() => { navigator.clipboard.writeText(previewRef.current.innerHTML):1000);
   }
   
