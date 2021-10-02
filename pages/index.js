@@ -15,25 +15,26 @@ export default function Home() {
 
   const input = (event) => {
     const value = event.target.value;
+    descRef.current.innerText =
+      "Striked text will automatically be copied to clipboard.";
     if (value === "") {
-      descRef.current.innerText =
-        "Striked text will automatically be copied to clipboard.";
+      previewRef.current.innerText = "";
     } else {
-      //descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+      previewRef.current.innerText = strike(value);
     }
-    previewRef.current.innerText = strike(value);
   };
 
   let timeout = null;
   let cotime = null;
   function copyText() {
+    const value = previewRef.current.innerHTML;
     clearTimeout(timeout);
     timeout = setTimeout(function () {
-      navigator.clipboard.writeText(previewRef.current.innerHTML);
+      if(value) navigator.clipboard.writeText(previewRef.current.innerHTML);
     }, 1000);
     clearTimeout(cotime);
     cotime = setTimeout(function () {
-      descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+      if(value) descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
     }, 1000);
   }
 
