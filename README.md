@@ -2,7 +2,7 @@
 
 Check out the [Live Website](https://strikeit.ml)
 
-This is a simple [Next.js](https://nextjs.org/) site to quickly get the striked through version of text copied to your keyboard. 
+This is a simple [Next.js](https://nextjs.org/) site to quickly get the striked through version of text copied to your keyboard.
 
 Don't forget to ⭐️ this repository!
 
@@ -23,6 +23,8 @@ git clone https://github.com/gouravkhunger/nextjs-strikeit
 `cd` into the folder and then, run the development server:
 
 ```bash
+# download dependencies
+npm i
 npm run dev
 # or
 yarn dev
