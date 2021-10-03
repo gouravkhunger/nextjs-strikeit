@@ -20,6 +20,8 @@ export default function Home() {
     previewRef.current.innerText = value ? strike(value) : "";
   };
 
+	const setCaretPositionToEnd = (e) => e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+
   let timeout = null;
   const copyText = () => {
     clearTimeout(timeout);
@@ -64,6 +66,7 @@ export default function Home() {
             type="text"
             onChange={input}
             onKeyUp={copyText}
+						onClick={setCaretPositionToEnd}
           />
           <p className={styles.preview} ref={previewRef}></p>
           <p className={styles.desc}>
