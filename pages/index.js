@@ -24,6 +24,8 @@ export default function Home() {
     }
   };
 
+	const setCaretPositionToEnd = (e) => e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+
   let timeout = null;
   let cotime = null;
   function copyText() {
@@ -69,6 +71,7 @@ export default function Home() {
             type="text"
             onChange={input}
             onKeyUp={copyText}
+						onClick={setCaretPositionToEnd}
           />
           <p className={styles.preview} ref={previewRef}></p>
           <p className={styles.desc}>
