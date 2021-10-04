@@ -26,7 +26,7 @@
 }
 
 .desc a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .preview {
@@ -34,7 +34,7 @@
   max-width: 70vw;
   text-align: center;
   text-overflow: ellipsis;
-  overflow: hidden;     
+  overflow: hidden;
   white-space: nowrap;
   padding: 5px;
 }
@@ -57,6 +57,7 @@
   font-size: 16px;
   border-radius: 32px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 13px;
 }
 
 .input:focus {
@@ -66,8 +67,14 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .input, 
+  .input,
   .preview {
     max-width: 50vw !important;
   }
+}
+
+.footer {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 1px;
 }

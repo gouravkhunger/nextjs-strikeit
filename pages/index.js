@@ -69,7 +69,7 @@ export default function Home() {
 						onClick={setCaretPositionToEnd}
           />
           <p className={styles.preview} ref={previewRef}></p>
-          <p className={styles.desc}>
+          <p className={styles.footer}>
             Crafted by{" "}
             <a
               className={styles.span}
@@ -79,7 +79,6 @@ export default function Home() {
             >
               Gourav
             </a>
-            .
           </p>
         </div>
       </main>
