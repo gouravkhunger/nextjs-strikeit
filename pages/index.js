@@ -30,11 +30,12 @@ export default function Home() {
     const value = previewRef.current.innerHTML;
     clearTimeout(timeout);
     timeout = setTimeout(function () {
-      if(value) navigator.clipboard.writeText(previewRef.current.innerHTML);
+      if (value) navigator.clipboard.writeText(previewRef.current.innerHTML);
     }, 1000);
     clearTimeout(cotime);
     cotime = setTimeout(function () {
-      if(value) descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+      if (value)
+        descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
     }, 1000);
   }
 
@@ -71,7 +72,7 @@ export default function Home() {
             onKeyUp={copyText}
           />
           <p className={styles.preview} ref={previewRef}></p>
-          <p className={styles.desc}>
+          <p className={styles.footer}>
             Crafted by{" "}
             <a
               className={styles.span}
@@ -81,7 +82,6 @@ export default function Home() {
             >
               Gourav
             </a>
-            .
           </p>
         </div>
       </main>
